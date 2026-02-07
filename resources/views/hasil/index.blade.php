@@ -31,7 +31,7 @@
                                 <td class="text-center">{{ $ranking['rank'] }}</td>
                                 <td>{{ $ranking['alternative']->nama }}</td>
                                 <td class="text-center">{{ $ranking['alternative']->jenis_kelamin === 'L' ? 'Laki-laki' : ($ranking['alternative']->jenis_kelamin === 'P' ? 'Perempuan' : $ranking['alternative']->jenis_kelamin) }}</td>
-                                <td class="text-center">{{ $ranking['alternative']->lama_bekerja }}</td>
+                                <td class="text-center">{{ $ranking['alternative']->lama_bekerja_label }}</td>
                                 <td class="text-center">{{ number_format($ranking['score'], 4) }}</td>
                                 <td class="text-center">
                                     @if($ranking['rank'] == 1)
