@@ -19,6 +19,7 @@
                         <tr>
                             <th class="text-center" width="5%">Ranking</th>
                             <th>Nama Karyawan</th>
+                            <th class="text-center" width="15%">Posisi</th>
                             <th class="text-center" width="15%">Jenis Kelamin</th>
                             <th class="text-center" width="15%">Lama Bekerja</th>
                             <th class="text-center" width="15%">Nilai Preferensi</th>
@@ -30,6 +31,7 @@
                             <tr>
                                 <td class="text-center">{{ $ranking['rank'] }}</td>
                                 <td>{{ $ranking['alternative']->nama }}</td>
+                                <td class="text-center">{{ ucfirst($ranking['alternative']->posisi) }}</td>
                                 <td class="text-center">{{ $ranking['alternative']->jenis_kelamin === 'L' ? 'Laki-laki' : ($ranking['alternative']->jenis_kelamin === 'P' ? 'Perempuan' : $ranking['alternative']->jenis_kelamin) }}</td>
                                 <td class="text-center">{{ $ranking['alternative']->lama_bekerja_label }}</td>
                                 <td class="text-center">{{ number_format($ranking['score'], 4) }}</td>
