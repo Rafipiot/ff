@@ -9,7 +9,7 @@ class Alternative extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nama', 'jenis_kelamin', 'lama_bekerja'];
+    protected $fillable = ['nama', 'jenis_kelamin', 'lama_bekerja', 'posisi'];
 
     public function getLamaBekerjaLabelAttribute()
     {

@@ -23,13 +23,15 @@ class AlternativeController extends Controller
         $request->validate([
             'nama' => 'required|string|max:255',
             'jenis_kelamin' => 'required|in:Laki-laki,Perempuan,L,P',
-            'lama_bekerja' => 'required|integer|min:0'
+            'lama_bekerja' => 'required|integer|min:0',
+            'posisi' => 'required|in:kasir,barista,kitchen'
         ]);
 
         Alternative::create([
             'nama' => $request->nama,
             'jenis_kelamin' => $request->jenis_kelamin === 'L' ? 'Laki-laki' : ($request->jenis_kelamin === 'P' ? 'Perempuan' : $request->jenis_kelamin),
-            'lama_bekerja' => $request->lama_bekerja
+            'lama_bekerja' => $request->lama_bekerja,
+            'posisi' => $request->posisi
         ]);
 
         return redirect()->route('alternative.index')
@@ -46,13 +48,15 @@ class AlternativeController extends Controller
         $request->validate([
             'nama' => 'required|string|max:255',
             'jenis_kelamin' => 'required|in:Laki-laki,Perempuan,L,P',
-            'lama_bekerja' => 'required|integer|min:0'
+            'lama_bekerja' => 'required|integer|min:0',
+            'posisi' => 'required|in:kasir,barista,kitchen'
         ]);
 
         $alternative->update([
             'nama' => $request->nama,
             'jenis_kelamin' => $request->jenis_kelamin === 'L' ? 'Laki-laki' : ($request->jenis_kelamin === 'P' ? 'Perempuan' : $request->jenis_kelamin),
-            'lama_bekerja' => $request->lama_bekerja
+            'lama_bekerja' => $request->lama_bekerja,
+            'posisi' => $request->posisi
         ]);
 
         return redirect()->route('alternative.index')

@@ -21,6 +21,7 @@
                     <tr>
                         <th width="5%">No</th>
                         <th>Nama Karyawan</th>
+                        <th width="15%">Posisi</th>
                         <th width="15%">Jenis Kelamin</th>
                         <th width="15%">Lama Bekerja</th>
                         <th width="20%">Aksi</th>
@@ -31,6 +32,7 @@
                         <tr>
                             <td>{{ $key + 1 }}</td>
                             <td>{{ $alternative->nama }}</td>
+                            <td>{{ ucfirst($alternative->posisi) }}</td>
                             <td>{{ $alternative->jenis_kelamin === 'L' ? 'Laki-laki' : ($alternative->jenis_kelamin === 'P' ? 'Perempuan' : $alternative->jenis_kelamin) }}</td>
                             <td>{{ $alternative->lama_bekerja_label }}</td>
                             <td>
@@ -52,7 +54,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="5" class="text-center">Tidak ada data karyawan</td>
+                            <td colspan="6" class="text-center">Tidak ada data karyawan</td>
                         </tr>
                     @endforelse
                 </tbody>

@@ -41,6 +41,24 @@
             </div>
 
             <div class="mb-3">
+                <label for="posisi" class="form-label">Posisi</label>
+                <select class="form-control @error('posisi') is-invalid @enderror"
+                        id="posisi"
+                        name="posisi"
+                        required>
+                    <option value="">-- Pilih --</option>
+                    <option value="kasir" {{ old('posisi') == 'kasir' ? 'selected' : '' }}>Kasir</option>
+                    <option value="barista" {{ old('posisi') == 'barista' ? 'selected' : '' }}>Barista</option>
+                    <option value="kitchen" {{ old('posisi') == 'kitchen' ? 'selected' : '' }}>Kitchen</option>
+                </select>
+                @error('posisi')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div>
+
+            <div class="mb-3">
                 <label for="lama_bekerja" class="form-label">Lama Bekerja (Tahun)</label>
                 <input type="number"
                        class="form-control @error('lama_bekerja') is-invalid @enderror"
