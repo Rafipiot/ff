@@ -9,7 +9,7 @@ class Alternative extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nama'];
+    protected $fillable = ['nama', 'jenis_kelamin', 'lama_bekerja'];
 
     public function scores()
     {

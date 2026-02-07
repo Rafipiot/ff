@@ -11,6 +11,8 @@ return new class extends Migration
         Schema::create('alternatives', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
+            $table->string('jenis_kelamin');
+            $table->unsignedInteger('lama_bekerja');
             $table->timestamps();
         });
     }
