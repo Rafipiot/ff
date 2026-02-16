@@ -76,6 +76,7 @@ class AhpTopsisService
     {
         foreach ($this->criterias as $criteria) {
             $sumSquared = 0;
+            
             foreach ($this->alternatives as $alternative) {
                 $score = $this->decisionMatrix[$alternative->id][$criteria->id] ?? 0;
                 $sumSquared += pow($score, 2);

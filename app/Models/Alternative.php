@@ -9,16 +9,7 @@ class Alternative extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nama', 'jenis_kelamin', 'lama_bekerja', 'posisi'];
-
-    public function getLamaBekerjaLabelAttribute()
-    {
-        if ($this->lama_bekerja === null) {
-            return null;
-        }
-
-        return $this->lama_bekerja . ' Tahun';
-    }
+    protected $fillable = ['nama', 'jenis_kelamin', 'lama_bekerja'];
 
     public function scores()
     {
